@@ -1,0 +1,96 @@
+@charset:"UTF-8";
+body{
+  background-color: #1c1c1c;
+  color: white;
+ /* box-shadow: 5px 5px 2px white;*/
+}
+.emcima{
+  color: #00FF6A;
+  width: 181px;
+  height: 60px;
+  display: inline-block;
+  text-align: center;
+/*  border: 1px solid white;*/
+}
+#ec1{
+  color: red;
+  width: 71px;
+  height: 40px;
+}
+#ec2{
+  color: red;
+  width: 75px;
+  height: 40px;
+}
+.las{
+  font: normal bold 26px times, serif;
+}
+#ler{
+  font: normal bold 29px Sans-Serif;
+}
+#ler:visited{
+  text-decoration: none;
+}
+.titulo{
+  display: inline-block;
+}
+.titulo2{
+  display: inline;
+  
+}
+.titulo:visited{
+  text-decoration: none;
+}
+#font{
+  color: white;
+}
+.imgcenter{
+  text-align: center;
+}
+.imgtam{
+  width: 200px;
+  height:300px;
+}
+#zero{
+   width: 338px;
+  height:330px;
+  background-image: url('/posters/external_cover.jpg');
+  border:3px solid rgb(244,50,255);
+  border-bottom-color: gray;
+  /*border-left:3px solid rgb(244,50,255);
+  border-right:3px solid rgb(244,50,255);*/
+  background-size: 100%;
+  background-repeat: no-repeat;
+  text-align: center;
+  margin: auto;
+}
+#one{
+  background-color: red;
+  width: 10px;
+  height:90px;
+}
+#three{
+  background-color: rgb(169,255,35);
+  width:270px;
+  height: 30px;
+  /*font: normal bold 24px white;*/
+  text-align: center;
+  margin: auto;
+  padding: 10px;
+}
+.nound{
+  color: #a8afff;
+}
+.nound:link{
+  text-decoration: none;
+}
+.col{
+  color: rgb(250,71,255);
+}
+#five{
+  margin-top: 155px;
+  text-align:center;
+}
+#divimg{
+  margin-top: 170px;
+}

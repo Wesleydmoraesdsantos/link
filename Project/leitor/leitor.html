@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>construindo um leitor</title>
+    <style type="text/css" media="all">
+    :root{
+      /*--corleitor: #0068ff;*/
+      --corleitor: rgb(17,17,17);
+    }
+    body{
+      margin: 0px;
+      color: white;
+    }
+      #zero{
+        background-color: #282828;
+      }
+      .headconf{
+        font-family: Helvetica, Arial ,Sans-Serif;
+        text-align: center;
+        height: 20px;
+        width: 100%;
+        background-color: var(--corleitor);
+        border-radius: 0px 0px 8px 8px;
+        position: fixed;
+      }
+      .confative{
+        font-family: Helvetica, Arial ,Sans-Serif;
+        height: 75px;
+        width: 100%;
+        background-color: var(--corleitor);
+        text-align: center;
+        border-radius: 0px 0px 8px 8px;
+        position: fixed;
+      }
+      .big{
+        text-align: center;
+        width: 350px;
+        height: 400px;
+      }
+      .smal{
+         width: 350px;
+         height: 250px;
+          text-align: center;
+      }
+      .b1{
+        background-color: #595aff;
+      }
+      .b2{
+        
+      }
+    </style>
+  </head>
+  <body id="zero">
+    
+    <script type="text/javascript" charset="utf-8">
+      var local = window.document.querySelector('#zero');
+      var caixa = window.document.createElement('header');
+      var sign = window.document.createElement('p');
+      
+      function acionar() {
+        caixa.innerHTML = '';
+        sign.innerText = 'v';
+        sign.style.margin="0px";
+        sign.setAttribute('onclick','actiontime()');
+        caixa.setAttribute('class','headconf');
+        caixa.appendChild(sign);
+      }
+      
+      function actiontime() {
+        caixa.removeChild(sign);
+        let subbox = window.document.createElement('div');
+        let bt1 = window.document.createElement('button');
+        let bt2 = window.document.createElement('button');
+        let pp = window.document.createElement('p');
+        let ex = window.document.createElement('p');
+        pp.style.margin="0px";
+        bt1.innerText = '3 × 4';
+        bt2.innerText = '3 × 2';
+        ex.innerText = '^';
+        pp.innerText = 'page config';
+        bt1.setAttribute('class','b1');
+        bt2.setAttribute('class','b2');
+        bt1.setAttribute('onclick','tamanho(0)');
+        bt2.setAttribute('onclick','tamanho(1)');
+        ex.setAttribute('onclick','acionar()')
+        
+        subbox.appendChild(pp);
+        subbox.appendChild(bt1);
+        subbox.appendChild(bt2);
+        subbox.appendChild(ex);
+        caixa.appendChild(subbox);
+        caixa.setAttribute('class','confative')
+      }
+       var showbox = window.document.createElement('main');
+       var nm = 100;
+       var cmno = [`./Muito Mangá (PT-BR)/Naze Boku no Sekai wo Daremo Oboeteinai no ka_/Aura Scans_Capítulo 14.1/`];
+       
+       function tamanho(k = 0) {
+         showbox.innerText = '';
+         for(let i = 1; i < nm; i++) {
+           let foto = window.document.createElement('img');
+           if(k === 0){
+            foto.setAttribute('class','big');
+           }else if(k === 1){
+            foto.setAttribute('class','smal');
+           }
+           //estrutura de seleção
+           let f;
+           if(i <= 10){
+             f = `00${i}`;
+           }else if(i < 100){
+              f = `0${i}`;
+           }else{
+             f = `${i}`;
+           }
+           let camo = cmno[0] + `${f}` + `.jpg`;
+           foto.setAttribute('src', camo);
+           foto.setAttribute('alt',`${i}`);
+           
+           showbox.appendChild(foto);
+         }
+       }
+      local.appendChild(caixa);
+      local.appendChild(showbox);
+      acionar();
+      tamanho();
+    </script>
+  </body>
+</html>
