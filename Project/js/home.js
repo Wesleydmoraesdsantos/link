@@ -47,10 +47,8 @@ var classmaindiv = window.document.createElement('section')
   var markank = 0;
   var alignsearch;
   var showarea = window.document.createElement('div');
-  var allnum = 0;
   var clone = [];
-  var num2 = 9;
-  var cont = 1;
+  var alll_Active = null,cont = 1,num2 = 9,allnum = 0;
   //armazena o cabecalho
   var cabecalho = window.document.createElement('header');
   cabecalho.setAttribute('class','center');
@@ -140,12 +138,16 @@ function home1(){
     mainblock[1].appendChild(listd[i]);
   };
   
+  
   maisb.setAttribute('onclick','alll()');
-  maisb.setAttribute('id','four');
   maisb.innerHTML = 'show more';
+  maisb.setAttribute('id','four');
   mainblock[1].appendChild(listmore);
   mainblock[1].appendChild(maisb);
   local.appendChild(mainblock[1]);
+  if(alll_Active === 528){
+    alll();
+  }
   //terceira div classes
   var marca = window.document.createElement('span');
   marca.innerHTML = '>marcações';
@@ -275,6 +277,8 @@ function headandheart() {
     function alll(){
       maisb.setAttribute('onclick','restart()');
       maisb.innerHTML = 'close';
+      alll_Active = 528;
+      listmore.innerText = '';
     for(let i = 6; i < allvar[0].length;i++){
     listd.push(window.document.createElement('div'));
     listd[i].setAttribute('class','linem');
@@ -291,7 +295,6 @@ function headandheart() {
     listd[i].appendChild(listp[i]);
     listd[i].setAttribute('onclick',`subpage(${i}, 0, 7,${i}, 2)`);
     listmore.appendChild(listd[i]);
-    //window.scrollTo(930, 930);
   }
     }
   
@@ -302,6 +305,7 @@ function headandheart() {
     listp.splice(6, allvar[0].length);
     maisb.setAttribute('onclick','alll()');
     maisb.innerHTML = 'show more';
+    alll_Active = null;
     window.scrollTo(830, 830);
   };
   
