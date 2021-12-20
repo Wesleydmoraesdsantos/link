@@ -80,7 +80,7 @@ body{
 }
  .linem:active{
         transition-duration: 1s;
-        background-color: red;
+        background-color: #ff00ff;
         /*transform: scale(1.5);*/
       }
    .csstxt{
@@ -150,7 +150,47 @@ body{
   padding: 5px;
   border-bottom: 1px solid #e5e5e5;
 }
-
+.titu{
+  color: white;
+}
+.read{
+  color: white;
+  background-color: red;
+  width: 250px;
+  margin: auto;
+  padding: 2px;
+  transition: background-color 0.3s;
+  margin-bottom: 8px;
+}
+.read:active{
+  background-color: rgb(97,0,255);
+}
+.minii{
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  margin-bottom: -8px;
+}
+.ppr{
+  display: inline-block;
+  line-height: 0px;
+}
+.linkk{
+  text-decoration: none;
+}
+.areac{
+  width: 100%;
+}
+.ccll{
+  display: inline-block;
+  font: normal normal 0.9em Aril,Helvetica,Sans-Serif;
+  border-radius: 10px;
+  border: 1px solid lime;
+  color: white;
+  padding: 0.1px 5px;
+  margin-top: 3px;
+  margin-left: 4px;
+}
 /*media queries*/
 @media (max-width: 400px) {
   
