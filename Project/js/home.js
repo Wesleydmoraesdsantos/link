@@ -151,6 +151,7 @@ function home1(){
   if(alll_Active === 528){
     alll();
   }
+  console.log('alll' + alll_Active);
   //terceira div classes
   var marca = window.document.createElement('span');
   marca.innerHTML = '>marcações';
@@ -281,6 +282,7 @@ function headandheart() {
       maisb.setAttribute('onclick','restart()');
       maisb.innerHTML = 'close';
       alll_Active = 528;
+      console.log('alll ativado!')
       listmore.innerText = '';
     for(let i = 6; i < allvar[0].length;i++){
     listd.push(window.document.createElement('div'));
@@ -650,7 +652,7 @@ function headandheart() {
   if(ls === 0){
     menuinti2.setAttribute('onclick',`redirect(11, ${tpp}, ${wSv})`);
   }else if(ls === 3){
-    menuinti2.setAttribute('onclick','redirect(6)');
+    menuinti2.setAttribute('onclick',`redirect(6, ${tpp}, ${wSv})`);
   }else if(ls === 4){
     menuinti2.setAttribute('onclick',`redirect(4, ${tpp}, ${wSv})`);
     //volta do subpage ao search
@@ -1018,12 +1020,12 @@ function headandheart() {
    //fim do menu
    let exts = window.document.createElement('div');
        exts.setAttribute('class','linec');
-       
+       let spy = 0;
    for(let i in allclass){
      if(allclass[i].indexOf(sld) !== -1){
        let resultd = window.document.createElement('div');
        resultd.setAttribute('class','linems');
-       resultd.setAttribute('onclick',`subpage(${i}, 0, 3)`);
+       resultd.setAttribute('onclick',`subpage(${i}, 0, 3, ${++spy}, 5)`);
        let resulti = window.document.createElement('img');
        let worst = caminho2 + allvar[3][i];
        resulti.setAttribute('src', worst);
@@ -1142,14 +1144,13 @@ function touchend(evt) {
       } 
      xDown = null, yDown = null;
     }
-   
- //funcao de redirecionamento
- //rdrSc valor do window scroll
- //rdrty tipo do scrol control
-  
- function redirect(tip, rdrty=0, rdrSc=0, vls2) {
-  console.log(`type: ${rdrty}| valor: ${rdrSc} /redirect function to Scroll`)
-   if(tip === 1){
+   //objeto de animação
+   var party = {
+     rotas: function (tip, rdrty, rdrSc, vls2) {
+        if(tip !== 2 && tip !== 8 && tip !== 9){
+       local.removeAttribute('class');
+        }
+       if(tip === 1){
       local.innerText = '';
       listd = [];
       lista = [];
@@ -1211,6 +1212,7 @@ function touchend(evt) {
    }else if(tip === 6){
      local.innerHTML = '';
      ccmm(result);
+     scrollControl(rdrty,rdrSc);
      //retorna a seleção por classe
    }else if(tip === 7){
      local.innerText = '';
@@ -1264,12 +1266,26 @@ function touchend(evt) {
       category = [];
       home1();
       scrollControl(rdrty,rdrSc);
-      maisb.setAttribute('onclick','restart()');
-      maisb.innerHTML = 'close';
      console.log('redirect 11 funcionou');
       markank = 0;
       //retorna ao home do sub mylist
    }
+     },
+     desv: function (tip1, rdrty1, rdrSc1, vls21) {
+       if(tip1 !== 2 && tip1 !== 8 && tip1 !== 9){
+       local.setAttribute('class','fechar');
+       setTimeout(`party.rotas(${tip1}, ${rdrty1}, ${rdrSc1}, ${vls21})`, 500);
+       }else{
+         party.rotas(tip1, rdrty1, rdrSc1, vls21);
+       }
+     }
+   }
+ //funcao de redirecionamento
+ //rdrSc valor do window scroll
+ //rdrty tipo do scrol control
+  
+ function redirect(tip0, rdrty0=0, rdrSc0=0, vls20) {
+   party.desv(tip0, rdrty0, rdrSc0, vls20);
  }
  //controle do scroll
  
@@ -1304,7 +1320,13 @@ function touchend(evt) {
        //scroll do search
        break
       case 5:
-       //vazio
+       let st4 = ((nS / 2) * 260) - 260;
+       if(st4 <= 0){
+         st4 = 0
+       }
+       console.log(`${st4}| scroll classes`);
+       window.scrollTo(st4, st4);
+       //scroll das classes
        break
      default:
      //vazio
