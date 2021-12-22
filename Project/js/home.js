@@ -73,10 +73,11 @@ function home1(){
   nsc0.appendChild(window.document.createTextNode(8));
   mainmangad.setAttribute('id','principal');
   mainmangad.setAttribute('onclick',`subpage(${8}, 0, 6)`);
-  var mainmangai = window.document.createElement('img');
+  var mainmangai = window.document.createElement('div');
   let mainmangaf = caminho2 + allvar[3][8];
-  mainmangai.setAttribute('src',mainmangaf);
-  mainmangai.setAttribute('alt','capa do manga');
+  //mainmangai.setAttribute('src',mainmangaf);
+  mainmangai.style.backgroundImage=`url(./${mainmangaf})`
+  //mainmangai.setAttribute('alt','capa do manga');
   mainmangai.setAttribute('class','imgr')
   var mainmangah = window.document.createElement('h2');
   mainmangah.innerHTML = 'gods reborn';
@@ -102,11 +103,12 @@ function home1(){
   for(let i in readingselected){
     readingd.push(window.document.createElement('div'));
     readingd[i].setAttribute('class','linem');
-    readingi.push(window.document.createElement('img'));
+    readingi.push(window.document.createElement('div'));
     let mainmangaf = caminho2 + allvar[3][readingselected[i]];
-    readingi[i].setAttribute('src',mainmangaf);
+    /*readingi[i].setAttribute('src',mainmangaf);
+    readingi[i].setAttribute('alt','capa do manga');*/
+    readingi[i].style.backgroundImage=`url(${mainmangaf})`;
     readingi[i].setAttribute('class','imgclass');
-    readingi[i].setAttribute('alt','capa do manga');
     readingp.push(window.document.createElement('p'));
     readingp[i].setAttribute('class','csstxt');
     readingp[i].appendChild(window.document.createTextNode(allvar[0][readingselected[i]]));
@@ -127,11 +129,10 @@ function home1(){
   for(let i = 0; i < 6;i++){
     listd.push(window.document.createElement('div'));
     listd[i].setAttribute('class','linem');
-    listi.push(window.document.createElement('img'));
+    listi.push(window.document.createElement('div'));
     let mainmangaf = caminho2 + allvar[3][i];
-    listi[i].setAttribute('src',mainmangaf);
+    listi[i].style.backgroundImage=`url(./${mainmangaf})`;
     listi[i].setAttribute('class','imgclass');
-    listi[i].setAttribute('alt','capa do manga'),
     listp.push(window.document.createElement('p'));
     listp[i].setAttribute('class','csstxt');
     listp[i].appendChild(window.document.createTextNode(allvar[0][i]));
@@ -287,11 +288,11 @@ function headandheart() {
     for(let i = 6; i < allvar[0].length;i++){
     listd.push(window.document.createElement('div'));
     listd[i].setAttribute('class','linem');
-    listi.push(window.document.createElement('img'));
+    listi.push(window.document.createElement('div'));
     let mainmangaf = caminho2 + allvar[3][i];
-    listi[i].setAttribute('src',mainmangaf);
+    listi[i].style.backgroundImage=`url(${mainmangaf})`;
     listi[i].setAttribute('class','imgclass');
-    listi[i].setAttribute('alt','capa do manga');
+    //listi[i].setAttribute('alt','capa do manga');
     listp.push(window.document.createElement('p'));
     listp[i].setAttribute('class','csstxt');
     listp[i].appendChild(window.document.createTextNode(allvar[0][i]));
@@ -332,10 +333,9 @@ function headandheart() {
     for(let i in oneclass){
       oned.push(window.document.createElement('div'));
       oned[i].setAttribute('class','linem');
-      onei.push(window.document.createElement('img'));
+      onei.push(window.document.createElement('div'));
       let mainmangaf = caminho2 + allvar[3][oneclass[i]];
-      onei[i].setAttribute('src', mainmangaf);
-      onei[i].setAttribute('alt','classe 1');
+      onei[i].style.backgroundImage=`url(${mainmangaf})`;
       onei[i].setAttribute('class','imgclass');
       onep.push(window.document.createElement('p'));
       onep[i].appendChild(window.document.createTextNode(allvar[0][oneclass[i]]));
@@ -423,10 +423,9 @@ function headandheart() {
    for(let i in numclass){
    animd.push(window.document.createElement('div'));
    animd[i].setAttribute('class','linem');
-   animi.push(window.document.createElement('img'));
+   animi.push(window.document.createElement('div'));
    let mainmangaf = caminho2 + allvar[3][numclass[i]];
-   animi[i].setAttribute('src', mainmangaf);
-   animi[i].setAttribute('alt','capa do manga');
+   animi[i].style.backgroundImage=`url(${mainmangaf})`;
    animi[i].setAttribute('class','imgclass');
    animp.push(window.document.createElement('p'));
    animp[i].appendChild(window.document.createTextNode(allvar[0][numclass[i]]));
@@ -576,10 +575,9 @@ function headandheart() {
      divv[gg].setAttribute('class','linems');
      par.push(window.document.createElement('p'));
      par[gg].setAttribute('class','csstxt');
-     imgg.push(window.document.createElement('img'));
+     imgg.push(window.document.createElement('div'));
      res = caminho2 + allvar[3][numlist[gg]];
-     imgg[gg].setAttribute('src', res);
-     imgg[gg].setAttribute('alt','busca');
+     imgg[gg].style.backgroundImage=`url(${res})`;
      imgg[gg].setAttribute('class','bigimg');
      
      divv[gg].appendChild(imgg[gg]);
@@ -694,7 +692,7 @@ function headandheart() {
  //wSv = window scroll value
  //tpp tipo do switch
  var alivar;
- var lugarposter = window.document.createElement('img');
+ var lugarposter = window.document.createElement('div');
  
  function subpage(x, v=0, lsi, wSvz, tppz){
    local.innerHTML = '';
@@ -707,20 +705,20 @@ function headandheart() {
   //fim do menu, inicio da mostra
   
   prover(x);
- var fontlink = window.document.createElement('a');
- var fontspan = window.document.createElement('span');
- var fontp = window.document.createElement('p');
+ let fontlink = window.document.createElement('a');
+ let fontspan = window.document.createElement('span');
+ let fontp = window.document.createElement('p');
  let Scp = window.document.createElement('div');
  Scp.setAttribute('onclick',`Capa1(${x})`);
  Scp.setAttribute('class','Hello');
- var tagmain = window.document.createElement('main');
+ let tagmain = window.document.createElement('main');
  tagmain.setAttribute('id','neck');
  
  tagmain.style.background=`url(./archive/posters/${allvar[3][x]})`;
  tagmain.style.backgroundSize="100%";
  tagmain.style.backgroundRepeat="no-repeat";
  tagmain.setAttribute('class','titulo mgtop2');
- var divdei = window.document.createElement('div');
+ let divdei = window.document.createElement('div');
  divdei.setAttribute('id','divimg');
  fontp.innerHTML = 'font: ';
  fontspan.appendChild(window.document.createTextNode(allvar[6][provname]));
@@ -728,14 +726,11 @@ function headandheart() {
  fontlink.setAttribute('rel','nofollow');
  fontlink.setAttribute('href',allvar[5][prov]);
  fontlink.setAttribute('class','nound');
- var div1 = window.document.createElement('div');
+ let div1 = window.document.createElement('div');
  
  var img5 = './archive/posters/' + allvar[3][x];
- lugarposter.setAttribute('src', img5);
- //lugarposter.style.background=`url(${img5})`
- //lugarposter.style.backgroundSize="100%"
-// lugarposter.style.backgroundRepeat="no-repeat"
- lugarposter.setAttribute('alt',allvar[2][x]);
+ lugarposter.style.backgroundImage=`url(${img5})`;
+ lugarposter.style.backgroundSize="100% 100%";
  lugarposter.setAttribute('class','imgtam');
  div1.setAttribute('class','imgcenter');
  
@@ -1026,10 +1021,9 @@ function headandheart() {
        let resultd = window.document.createElement('div');
        resultd.setAttribute('class','linems');
        resultd.setAttribute('onclick',`subpage(${i}, 0, 3, ${++spy}, 5)`);
-       let resulti = window.document.createElement('img');
+       let resulti = window.document.createElement('div');
        let worst = caminho2 + allvar[3][i];
-       resulti.setAttribute('src', worst);
-       resulti.setAttribute('alt','capa do manga');
+       resulti.style.backgroundImage=`url(${worst})`
        resulti.setAttribute('class','bigimg');
        let resultp = window.document.createElement('p');
        resultp.appendChild(window.document.createTextNode(allvar[2][i]));

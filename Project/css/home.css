@@ -80,8 +80,11 @@ margin-top: 10px;
       margin-top: 68px;
 }
 .imgr{
-  width: 200px;
-  height: 300px;
+  width: 210px;
+  height: 305px;
+  background-size: 210px 305px;
+  background-repeat: no-repeat;
+  margin: auto;
 }
  .linem{
   display: inline-block;
@@ -96,6 +99,9 @@ margin-top: 10px;
 .imgclass{
   width:100px;
   height: 150px;
+  background-size: 100px 150px;
+  background-repeat: no-repeat;
+  margin: auto;
 }
  .linem:active{
         transition-duration: 1s;
@@ -217,7 +223,6 @@ margin-top: 10px;
         text-align: center;
         font-size: 10px;
       }
-      /*em teste!*/
       .inazuma{
         display: inline-block;
       }
@@ -242,7 +247,6 @@ margin-top: 10px;
         background-attachment: fixed;
       }
       .alinharsearch{
-        /*width: 300px;*/
         margin: auto;
         margin-top: 3px;
       }
@@ -257,6 +261,9 @@ margin-top: 10px;
       .bigimg{
         width: 148px;
         height: 220px;
+        background-size: 148px 220px;
+        background-repeat: no-repeat;
+        margin: auto;
       }
       .inazumaeleven{
         width: 230px;
@@ -368,12 +375,13 @@ margin-top: 10px;
 .imgtam{
   width: 200px;
   height:300px;
+  background-repeat: no-repeat;
   margin: auto;
   border: 5px solid black;
- /* transition: transform 1s 0.5s;*/
+ transition: transform 1s 0.5s;
 }
 .imgtam:active{
-  /*transform: scale(1.7);*/
+  transform: scale(1.7);
 }
 #neck{
   width: 348px;
@@ -424,7 +432,7 @@ margin-top: 10px;
   color: white;
   font: var(--fonttit);
   text-align: center;
-  margin-top: 170px;
+  padding-top: 150px;
 }
 .subsin{
   margin-left: 15px;
@@ -439,8 +447,8 @@ margin-top: 10px;
 .srate{
   font-family: Helvetica;
   display: inline-block;
-  margin-left: 2px;
-  padding: 3px;
+  margin-left: 1.7px;
+  padding: 0.5px 0.4px;
   height: 14px;
   color: lime;
   border: 1px solid lime;
