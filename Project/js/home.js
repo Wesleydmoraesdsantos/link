@@ -58,33 +58,59 @@ var classmaindiv = window.document.createElement('section')
   //menul o local de despejo do menu
    var menulc = window.document.createElement('div');
    //localiza onde está para o exit main menu
-   var localizador;
+   var localizador,localizador2;
    
+    //função do apresentar
+     var maindv = window.document.createElement('div');
+     var pdr = window.document.createElement('section');
+     pdr.setAttribute('class','onekiss');
+     var maindi = window.document.createElement('div');
+     var mainp = window.document.createElement('h2');
+ var mtd = {
+   rnd: function () {
+     let vlr;
+     do{
+     vlr = (Math.round(Math.random()*10)) * (Math.round(Math.random()*10));
+     console.log('vlr value = ' + vlr);
+     if(vlr === 63){
+       vlr = 0;
+     }
+      }while(vlr > 63);
+      console.log('vlr FINAL value = ' + vlr);
+     return vlr;
+   },
+   mud: function () {
+     maindv.style.animation=`trocar2 2s linear 1`;
+     let slc = mtd.rnd();
+     mainp.innerText = '';
+     mainp.innerText = `${allvar[0][slc]}`;
+     let mainmangaf = caminho2 + allvar[3][slc];
+     maindi.style.backgroundImage=`url(./${mainmangaf})`;
+     maindi.setAttribute('class','imgr');
+     maindv.setAttribute('id','principal');
+     maindv.setAttribute('onclick',`subpage(${slc})`);
+     
+     maindv.appendChild(maindi);
+     maindv.appendChild(mainp);
+   },
+   stt: function () {
+     maindv.style.animation=`trocar1 2s linear 1`;
+     setTimeout(mtd.mud, 2000);
+   }
+ }
+    var timer = null;
 function home1(){
   lugar.style.background="#1c1c1c";
   localizador = 1;
+  localizador2 = 3;
   //lugar.style.background="rgb(47,47,47)"
   category = [];
   local.appendChild(menulc);
   headandheart();
   //corpo do home
-  var mainmangad = window.document.createElement('div');
-  var nsc0 = window.document.createElement('noscript');
-  nsc0.appendChild(window.document.createTextNode(8));
-  mainmangad.setAttribute('id','principal');
-  mainmangad.setAttribute('onclick',`subpage(${8}, 0, 6)`);
-  var mainmangai = window.document.createElement('div');
-  let mainmangaf = caminho2 + allvar[3][8];
-  //mainmangai.setAttribute('src',mainmangaf);
-  mainmangai.style.backgroundImage=`url(./${mainmangaf})`
-  //mainmangai.setAttribute('alt','capa do manga');
-  mainmangai.setAttribute('class','imgr')
-  var mainmangah = window.document.createElement('h2');
-  mainmangah.innerHTML = 'gods reborn';
-  mainmangad.appendChild(mainmangai);
-  mainmangad.appendChild(mainmangah);
-  local.appendChild(mainmangad);
-  
+  pdr.appendChild(maindv);
+  local.appendChild(pdr);
+  mtd.mud();
   for(let i = 0; i < 3; i++){
     mainblock.push(window.document.createElement('div'));
   };
@@ -105,8 +131,6 @@ function home1(){
     readingd[i].setAttribute('class','linem');
     readingi.push(window.document.createElement('div'));
     let mainmangaf = caminho2 + allvar[3][readingselected[i]];
-    /*readingi[i].setAttribute('src',mainmangaf);
-    readingi[i].setAttribute('alt','capa do manga');*/
     readingi[i].style.backgroundImage=`url(${mainmangaf})`;
     readingi[i].setAttribute('class','imgclass');
     readingp.push(window.document.createElement('p'));
@@ -233,11 +257,12 @@ function home1(){
   local.appendChild(rr);
   alignsearch = null;
 };
+
 home1();
 //funcao cabecalho
 function headandheart() {
   cabecalho.innerHTML = '';
-  
+  cabecalho.setAttribute('class','center brt');
   let dr = [];
   for(let i = 0;i < 3;i++){
   dr.push(window.document.createElement('article'));
@@ -276,7 +301,11 @@ function headandheart() {
     }
     cabecalho.appendChild(dr[i]);
   }
+  console.log('localizador1 = ' + localizador)
+  if(localizador === 1){
   local.appendChild(cabecalho);
+  }
+  timer = setInterval(mtd.stt, 7000);
 }
 
     function alll(){
@@ -473,15 +502,16 @@ function headandheart() {
     classd[2].setAttribute('class','ordem')
     marca2.setAttribute('onclick','notas()')
   }
-  
+ 
   //funcao de peaquisa
 
   var contar;
   var allask;
   
  function search(){
-   localizador = 2;
    local.innerHTML = '';
+   clearInterval(timer);
+   //localizador = 2;
    alignsearch = window.document.createElement('div');
   
    allask = window.document.createElement('div');
@@ -555,7 +585,7 @@ function headandheart() {
   allask.appendChild(showarea);
    for(var e in allvar[1]){
      var valor = String(window.document.querySelector('#sank').value.toLowerCase());
-     //console.log(e + allvar[1][e]);
+     console.log(e + allvar[1][e]);
      if(allvar[1][e].indexOf(valor) != -1){
        numlist.push(e);
        clone.push(e);
@@ -627,8 +657,10 @@ function headandheart() {
  }
  //funcao cabecalho do subpage
  function subhead(ls=0,tpp=0,wSv=0) {
+   cabecalho.setAttribute('id','rst');
+   cabecalho.removeAttribute('class','brt')
    let menuint = window.document.createElement('header');
-   menuint.setAttribute('class','center');
+   menuint.setAttribute('class','center brt');
    let menud = [];
    
    let menuinti = window.document.createElement('img');
@@ -684,7 +716,9 @@ function headandheart() {
     };
    };
   cabecalho.appendChild(menuint);
+  if(localizador === 7){
   local.appendChild(cabecalho);
+  }
   menulc.innerHTML = '';
   
  }
@@ -697,6 +731,9 @@ function headandheart() {
  function subpage(x, v=0, lsi, wSvz, tppz){
    local.innerHTML = '';
    cabecalho.innerHTML = '';
+   clearInterval(timer);
+   localizador = 7;
+   localizador2 = 6;
    lugar.style.background="#1c1c1c";
    category = [];
    subhead(lsi,tppz,wSvz);
@@ -907,6 +944,7 @@ function headandheart() {
  //funcao de classe search
  
  function searclass() {
+   clearInterval(timer);
    local.innerText = '';
    let sectm = window.document.createElement('header');
    sectm.setAttribute('class','anti')
@@ -1052,6 +1090,7 @@ function headandheart() {
    var menul = null;
    function menu(zsh=0,vls=0, vRp, Tsc) {
      localizador = 3;
+     clearInterval(timer);
      //remover o header
      cabecalho.innerHTML = '';
      
@@ -1126,8 +1165,8 @@ function touchend(evt) {
         if (xDiff < 0 && localizador === 3) {
             //console.log('direcão X!'+'  / valor= '+ xDiff);
             //console.log(`${jjx} jjx//ohmy ${ohmy}`);
-            console.log(`ttpp= ${ttpp} // vSm= ${vSm}`)
-            if(jjx !== 0) {
+            console.log(`ttpp= ${ttpp} // vSm= ${vSm} // jjx= ${jjx} // localizador2= ${localizador2}`);
+            if(localizador2 !== 3) {
             redirect(9, ttpp, vSm, jjx);
             }else{
               redirect(8, ttpp, vSm);
@@ -1268,6 +1307,9 @@ function touchend(evt) {
      desv: function (tip1, rdrty1, rdrSc1, vls21) {
        if(tip1 !== 2 && tip1 !== 8 && tip1 !== 9){
        local.setAttribute('class','fechar');
+       if(cabecalho.id === 'rst'){
+         cabecalho.removeAttribute('id');
+       }
        setTimeout(`party.rotas(${tip1}, ${rdrty1}, ${rdrSc1}, ${vls21})`, 500);
        }else{
          party.rotas(tip1, rdrty1, rdrSc1, vls21);
@@ -1279,6 +1321,9 @@ function touchend(evt) {
  //rdrty tipo do scrol control
   
  function redirect(tip0, rdrty0=0, rdrSc0=0, vls20) {
+   if(localizador === 7){
+     cabecalho.removeAttribute('id')
+   }
    party.desv(tip0, rdrty0, rdrSc0, vls20);
  }
  //controle do scroll

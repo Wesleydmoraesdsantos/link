@@ -50,6 +50,8 @@ body{
 .mainexp{
   width: 140px;
   height: 210px;
+  background-size: 140px 210px;
+  background-repeat: no-repeat;
   margin-bottom: -110px;
   border: 2px solid #000000;
 }
@@ -77,6 +79,9 @@ body{
 .imgclass{
   width:100px;
   height: 150px;
+  background-size: 100px 150px;
+  background-repeat: no-repeat;
+  margin: auto;
 }
  .linem:active{
         transition-duration: 1s;
@@ -141,6 +146,9 @@ body{
 .maincapa{
   width: 200px;
   height: 300px;
+  background-size: 200px 300px;
+  background-repeat: no-repeat;
+  margin: auto;
   margin-top: 10px;
 }
 .alc{

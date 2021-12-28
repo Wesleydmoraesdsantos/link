@@ -48,9 +48,14 @@ body{
   text-align: center;
   position: fixed;
   width: 100%;
-  top: 0px;
-  border-bottom: 0.5px solid rgb(238,238,238);
+  margin-top: -68px;
   box-shadow: 0px 4px 4px black;
+}
+#rst{
+  margin-top: 68px;
+}
+.brt{
+  border-bottom: 0.5px solid rgb(238,238,238);
 }
 .mgtop{
   margin-top: 70px;
@@ -67,17 +72,41 @@ margin-top: 10px;
  float: none;
  height: 54px;
 }
+.onekiss{
+  height:386px;
+}
 #principal{
       color: rgb(228,228,228);
       background-color: rgb(14,14,14);
       padding: 8px;
       width: 230px;
+      height: 370px;
       text-align: center;
       margin:auto;
       border:0.7px solid red;
       border-radius: 3px;
       box-shadow: 5px 5px 3px black;
       margin-top: 68px;
+}
+@keyframes trocar1 {
+  0% {
+    opacity: 1;
+    margin-left: 16.1%;
+  }
+  100% {
+    opacity: 0;
+    margin-left: 31.5%;
+  }
+}
+@keyframes trocar2 {
+  0% {
+    margin-left: 0%;
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    margin-left:15.8%;
+  }
 }
 .imgr{
   width: 210px;
@@ -618,3 +647,9 @@ margin-top: 10px;
           height:170px;
           margin-top: -170px;
         }
+        /*medias 400px*/
+    @media (min-width: 450px) {
+     .centet{
+       position: relative;
+     }
+    }

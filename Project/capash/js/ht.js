@@ -82,10 +82,9 @@ let v = metodo.sel();
 let show = window.document.createElement('article');
 show.setAttribute('class','principal');
 show.setAttribute('onclick',`subh(${v})`);
-let pim = window.document.createElement('img');
-pim.setAttribute('alt','H de exposicão');
+let pim = window.document.createElement('div');
 console.log(nameh[v])
-pim.setAttribute('src',imgh[v]);
+pim.style.backgroundImage=`url(${imgh[v]})`;
 pim.setAttribute('class','mainexp inazuma');
 let pp = window.document.createElement('span');
 let jk = window.document.createElement('div');
@@ -109,9 +108,8 @@ for(let i in nameh){
   let dv = window.document.createElement('div');
   dv.setAttribute('class','linem');
   dv.setAttribute('onclick',`subh(${i})`);
-  let mg = window.document.createElement('img');
-  mg.setAttribute('src',imgh[i]);
-  mg.setAttribute('alt','picture/image');
+  let mg = window.document.createElement('div');
+  mg.style.backgroundImage=`url(${imgh[i]})`;
   mg.setAttribute('class','imgclass');
   let ltt = window.document.createElement('p');
   ltt.innerText = `${nameh[i]}`;
@@ -153,9 +151,8 @@ function subh(n) {
  sp.setAttribute('class','inazuma mz');
  spa.setAttribute('class','inazuma mz');
   mspa.setAttribute('class','tp');
-  let ccp = window.document.createElement('img');
-  ccp.setAttribute('src', imgh[n]);
-  ccp.setAttribute('alt','capa');
+  let ccp = window.document.createElement('div');
+  ccp.style.backgroundImage=`url(${imgh[n]})`;
   ccp.setAttribute('class','maincapa');
   let locs = window.document.createElement('header');
   locs.appendChild(subext);
