@@ -296,7 +296,7 @@ margin-top: 10px;
       }
       .inazumaeleven{
         width: 230px;
-        background-color: rgba(91,91,91,0.511);
+        background-color: transparent;
         color: white;
         border: 0px;
         border-bottom: 2px;
@@ -573,7 +573,7 @@ margin-top: 10px;
         background-color: rgb(30,30,30);
         width: 330px;
         height: 700px;
-        margin-top: -66px;
+        margin-top: -68px;
       }
       .sub_maindivmenu{
         position: fixed;
@@ -581,6 +581,7 @@ margin-top: 10px;
         background-color: rgb(30,30,30);
         width: 330px;
         height: 700px;
+        margin-top:-68px;
         
       }
       .logo{
@@ -629,6 +630,7 @@ margin-top: 10px;
           height: 100%;
           background-color: rgba(0,0,0,0.890);
           text-align: center;
+          margin-top:-65px;
         }
         .Showhour{
           width: 300px;
@@ -649,7 +651,50 @@ margin-top: 10px;
         }
         /*medias 400px*/
     @media (min-width: 450px) {
-     .centet{
+     /*.centet{
        position: relative;
+     }*/
+     #principal{
+      padding: 8px;
+      width: 330px;
+      height: 194px;
+      text-align: left;
      }
-    }
+     .imgr{
+       width: 140px;
+       height: 190px;
+       background-size: 135px 190px;
+       display: inline-block;
+       margin-bottom: -70px;
+     }
+     .tituloresponsivo{
+       display: inline-block;
+       font-size: 22px;
+       text-indent: 12px;
+     }
+@keyframes trocar1 {
+  0% {
+    opacity: 1;
+    margin-left: 32.5%;
+  }
+  100% {
+    opacity: 0;
+    margin-left: 50.5%;
+  }
+}
+@keyframes trocar2 {
+  0% {
+    margin-left: 0%;
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    margin-left:32.1%;
+  }
+}
+#read{
+  margin-top: -156px;
+}
+
+
+  }
