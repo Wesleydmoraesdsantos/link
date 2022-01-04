@@ -1375,3 +1375,14 @@ function touchend(evt) {
       break;
    }
  }
+ //pwa sw
+ if ('serviceWorker' in navigator) {
+  navigator.serviceWorker
+    .register('/pwa/sw.js')
+    .then(serviceWorker => {
+      console.log('Service Worker registered: ' + serviceWorker);
+    })
+    .catch(error => {
+      console.log('Error registering the Service Worker: ' + error);
+    });
+}
