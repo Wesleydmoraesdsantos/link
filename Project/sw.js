@@ -7,7 +7,7 @@ const CACHE = [
           '/manifest.json',
           '/java.png.',
           'cloud.png',
-          'internet.png
+          'internet.png'
         ];
 
 this.addEventListener('install', function (event) {

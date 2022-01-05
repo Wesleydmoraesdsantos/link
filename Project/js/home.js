@@ -122,7 +122,7 @@ function home1(){
   mainblock[0].appendChild(h3tit);
   mainblock[0].appendChild(hr1);
   
-  var readingselected = [32,33,34,35,36,3,8];
+  var readingselected = [32,8,34,35,36,41,3];
   var readingh = window.document.createElement('h3');
   var readingd = [];
   var readingp = [];
@@ -355,7 +355,7 @@ function headandheart() {
     classd[2].setAttribute('class','ordem');
     marca2.setAttribute('onclick','notas()');
     classdiv.setAttribute('class','linec');
-    var oneclass = [3, 8, 31, 38, 40, 41];
+    var oneclass = [3,31,33,38,40,41];
     var oned = [];
     var onei = [];
     var onep = [];
@@ -1378,7 +1378,7 @@ function touchend(evt) {
  //pwa sw
  if ('serviceWorker' in navigator) {
   navigator.serviceWorker
-    .register('/pwa/sw.js')
+    .register('/sw.js')
     .then(serviceWorker => {
       console.log('Service Worker registered: ' + serviceWorker);
     })
