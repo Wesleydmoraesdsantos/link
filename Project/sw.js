@@ -11,7 +11,7 @@ const CACHE = [
         ];
 
 this.addEventListener('install', function (event) {
-  event.waitUntil(
+  event.waitUtil(
     caches.open(CACHE_NAME).then(function (cache) {
       cache
         .addAll(CACHE);
