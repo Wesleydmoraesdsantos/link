@@ -1393,10 +1393,6 @@ let myPrompt;
 window.addEventListener('beforeinstallprompt', (e) => {
   e.preventDefault();
   myPrompt = e;
-});
-
-function insll () {
-  pwaAlert.style.display="none";
   myPrompt.prompt();
   console.log('pronto para instalar ' + e);
   myPrompt.userChoice
@@ -1407,4 +1403,7 @@ function insll () {
       console.log('instalacao negada/falhou');
     }
   });
-}
+  console.log('observa')
+});
+
+  
