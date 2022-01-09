@@ -1086,7 +1086,7 @@ function headandheart() {
  };
  //testando o main menu
    
-   var sell = [['Favorites','Anime list','Class','Search','Downloads','Coming soon','Settings','Home','go out'],['soon','soon','searclass()','search()','soon','soon','soon','redirect(10)','redirect(12)'],['favorite.png','playmenu.png','classmenu.png','whitesearch.png','download.png','moon.png',`tools.png`,'homeimg.png','power.png']];
+   var sell = [['Favorites','Anime list','Class','Search','Downloads','Coming soon','install','Settings','Home','go out'],['soon','soon','searclass()','search()','soon','soon','insll()','soon','redirect(10)','redirect(12)'],['favorite.png','playmenu.png','classmenu.png','whitesearch.png','download.png','moon.png','instal.png',`tools.png`,'homeimg.png','power.png']];
    var menul = null;
    function menu(zsh=0,vls=0, vRp, Tsc) {
      localizador = 3;
@@ -1385,4 +1385,26 @@ function touchend(evt) {
     .catch(error => {
       console.log('Error registering the Service Worker: ' + error);
     });
+}
+//prompt de installation
+let myPrompt;
+
+
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+  myPrompt = e;
+});
+
+function insll () {
+  pwaAlert.style.display="none";
+  myPrompt.prompt();
+  console.log('pronto para instalar ' + e);
+  myPrompt.userChoice
+  .then( (choiceResult) => {
+    if(choiceResult === 'accepted'){
+      console.log('instalacao aceita');
+    }else{
+      console.log('instalacao negada/falhou');
+    }
+  });
 }
