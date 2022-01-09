@@ -1381,7 +1381,7 @@ function touchend(evt) {
 //prompt de installation
 if('serviceWorker' in navigator){
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/sw.js', { scope: '/tst/2/' })
+    navigator.serviceWorker.register('./sw.js')
     .then((reg) => {
       console.log('serviceWorker registrado // ' + serviceWorker);
     }).catch((e) => {
