@@ -254,7 +254,9 @@ function home1(){
   var sma = window.document.createElement('p');
   sma.innerHTML = 'created by: &copy; king';
   sma.setAttribute('class','ult');
+  sma.setAttribute('id','soul');
   rr.appendChild(sma);
+  rr.setAttribute('id','soulTaken');
   local.appendChild(rr);
   alignsearch = null;
 };
@@ -1376,23 +1378,29 @@ function touchend(evt) {
    }
  }
  //pwa sw
- if ('serviceWorker' in navigator) {
-  navigator.serviceWorker
-    .register('/sw.js')
-    .then(serviceWorker => {
-      console.log('Service Worker registered: ' + serviceWorker);
-    })
-    .catch(error => {
-      console.log('Error registering the Service Worker: ' + error);
-    });
-}
 //prompt de installation
-let myPrompt;
-
+if('serviceWorker' in navigator){
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js', { scope: '/tst/2/' })
+    .then((reg) => {
+      console.log('serviceWorker registrado // ' + serviceWorker);
+    }).catch((e) => {
+      console.log('falha! // ', e.message)
+    })
+  })
+}
+var myPrompt;
+const pwaAlert = document.querySelector('#soulTaken');
+const btnPWA = document.querySelector('#soul');
 
 window.addEventListener('beforeinstallprompt', (e) => {
   e.preventDefault();
   myPrompt = e;
+  pwaAlert.style.display="block";
+});
+
+btnPWA.addEventListener('click', () => {
+  pwaAlert.style.display="none";
   myPrompt.prompt();
   console.log('pronto para instalar ' + e);
   myPrompt.userChoice
@@ -1403,7 +1411,6 @@ window.addEventListener('beforeinstallprompt', (e) => {
       console.log('instalacao negada/falhou');
     }
   });
-  console.log('observa')
 });
 
   
