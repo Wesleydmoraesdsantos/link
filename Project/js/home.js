@@ -1380,16 +1380,16 @@ function touchend(evt) {
  //pwa sw
 //prompt de installation
 if('serviceWorker' in navigator){
-  window.addEventListener('load', () => {
+  try{
     navigator.serviceWorker.register('./sw.js')
     .then((reg) => {
-      console.log('serviceWorker registrado // ' + serviceWorker);
+      console.log('serviceWorker registrado ' + serviceWorker);
     }).catch((e) => {
       console.log('falha! // ', e.message)
     })
   })
 }
-var myPrompt;
+/*var myPrompt;
 const pwaAlert = document.querySelector('#soulTaken');
 const btnPWA = document.querySelector('#soul');
 
@@ -1411,6 +1411,6 @@ btnPWA.addEventListener('click', () => {
       console.log('instalacao negada/falhou');
     }
   });
-});
+});*/
 
   
