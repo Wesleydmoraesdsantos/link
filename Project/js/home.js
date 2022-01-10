@@ -1387,9 +1387,9 @@ if('serviceWorker' in navigator){
     }).catch((e) => {
       console.log('falha! // ', e.message)
     })
-  })
+  }
 }
-/*var myPrompt;
+var myPrompt;
 const pwaAlert = document.querySelector('#soulTaken');
 const btnPWA = document.querySelector('#soul');
 
@@ -1411,6 +1411,6 @@ btnPWA.addEventListener('click', () => {
       console.log('instalacao negada/falhou');
     }
   });
-});*/
+});
 
   
