@@ -1,4 +1,4 @@
-const originalCacheName = 'v1';
+const cacheName = 'v1';
 const resourcesToPrecache = ['/','./index.html','./css/home.css','./manifest.json','./192x192.png','./512x512.png','./cloud.png','./Java.png','./internet.png'];
 
 self.addEventListener('install', (event) => {
